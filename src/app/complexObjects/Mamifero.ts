@@ -28,6 +28,16 @@ export class Mamifero extends Vertebrado {
     set TipoAlimentacion(val: String){
         this._TipoAlimentacion = val;
     }
+
+    /************************************************************************************
+     * Funcion:      Get TipoAlimentacion
+     * Parametros:   N/A
+     * Descripcion:  devuelve el valor a la variable _TipoAlimentacion
+     * Return:       TipoAlimentación: String
+     ************************************************************************************/
+    get TipoAlimentacion(): String{
+        return this._TipoAlimentacion;
+    }
     
     /************************************************************************************
      * Funcion:     Set TipoMovimiento
@@ -40,13 +50,23 @@ export class Mamifero extends Vertebrado {
     }
 
     /************************************************************************************
+     * Funcion:     Set TipoMovimiento
+     * Parametros:  val: String
+     * Descripcion: Agrega el valor a la variable _TipoMovimiento
+     * Return:      N/A
+     ************************************************************************************/
+    get TipoMovimiento(): String{
+        return this._TipoMovimiento;
+    }
+
+    /************************************************************************************
      * Funcion:     get TipoAlimentacion
      * Parametros:  N/A
      * Descripcion: Devuelve el valor en la variable _TipoAlimentacion, con formato.
      * Return:      Valor de la variable con formato
      ************************************************************************************/
     Alimentacion(){ 
-        return  "Nuestro " + this.Nombre.toLowerCase() + " es "+this._TipoAlimentacion; 
+        return  "Nuestro " + this.Nombre.toLowerCase() + " es "+ this.TipoAlimentacion; 
     }
 
     /************************************************************************************
@@ -66,7 +86,7 @@ export class Mamifero extends Vertebrado {
      * Return:      Valor de la variable con formato
      ************************************************************************************/
     Movimiento(){ 
-        return "El movimiento del " + this.Nombre.toLowerCase()  + " es: " + this._TipoMovimiento;  
+        return "El movimiento del " + this.Nombre.toLowerCase()  + " es: " + this.TipoMovimiento;  
     }
 
     /************************************************************************************
