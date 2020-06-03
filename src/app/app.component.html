@@ -1,6 +1,6 @@
 
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
+<div class="toolbar" role="banner" id="homeInit">
   <img
     width="40"
     alt="Angular Logo"
@@ -35,40 +35,40 @@
 
   <div id="ListaAnimales">
     <ul>
-      <li *ngFor="let anim of animals" (click)="seleccion(anim)">{{anim.nombre}}</li>
+      <li *ngFor="let anim of animals" (click)="seleccion(anim)">{{anim.Nombre}}</li>
     </ul>
   </div>
 
-  <div id="Animal_Seleccionado" class="container">
-    <div *ngIf="selected_animal" class="row">
+  <div id="Animal_Seleccionado" *ngIf="selected_animal"  class="container">
+    <div class="row">
       <div class="col-sm">
-        <b>Nombre:</b> {{selected_animal['nombre']}}
+        <b>Nombre:</b> {{selected_animal['Nombre']}}
       </div>
       <div class="col-sm">
-        <b>Sonido:</b> {{selected_animal['sonido']}}
-      </div>
-      <div class="col-sm">
-        <b>Cantidad de extremidades:</b> {{selected_animal['extremidades']}}
-      </div>
-      <div class="col-sm">
-        <b>Tipo de esqueleto:</b> {{selected_animal['esqueleto']}}
+        <b>Sonido:</b> {{selected_animal['Sonido']}}
       </div>
     </div>
-    <div *ngIf="selected_animal && !bProgramaSimple" class="row">
+    <div class="row">
       <div class="col-sm">
-        <b>Alimentacion:</b> {{selected_animal['alimentacion']}}
+        <b>Cantidad de extremidades:</b> {{selected_animal['Cantidad_Extremidades']}}
       </div>
       <div class="col-sm">
-        <b>Movimiento:</b> {{selected_animal['movimiento']}}
+        <b>Tipo de esqueleto:</b> {{selected_animal['Tipo_Esqueleto']}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <b>Alimentacion:</b> {{selected_animal['TipoAlimentacion']}}
+      </div>
+      <div class="col-sm">
+        <b>Movimiento:</b> {{selected_animal['TipoMovimiento']}}
       </div>
     </div>
   </div>
-
-  <br>
-  <button (click)="cambiarVista()">Cambiar Vista </button>
-
-
-
+  <br/>
+  <a [routerLink]="['item']" >
+    Nuevo animal
+  </a>
 </div>
 
 

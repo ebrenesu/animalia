@@ -1,16 +1,17 @@
 import { ReinoAnimal } from './ReinoAnimal';
 
 
-export enum VTaxonomia {
-    ANFIBIOS,
-    AVES,
-    MAMIFEROS,
-    PECES,
-    REPTILES
+export enum ITaxonomia {
+    ARTROPODOS,
+    MOLUSCOS,
+    EQUINODERMOS,
+    GUSANOS,
+    PORIFEROS,
+    CELENTEREOS
 };
 
 
-export abstract class Vertebrado extends ReinoAnimal {
+export abstract class Invertebrado extends ReinoAnimal {
     /* ===  Variables === */
     Tipo_Esqueleto: String;
       

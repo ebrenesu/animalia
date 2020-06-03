@@ -1,0 +1,69 @@
+<section id="nuevoAnimal">
+    <form #f="ngForm" (ngSubmit)="crearAnimal(f)">       
+        <div id="Animal_Seleccionado" class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <label for="lblCaracteristica">Caracteristica del reino</label><br/>
+                    <select name="sbCaracteristica" id="sbCaracteristica" [(ngModel)]="seleccionadoCategoria"
+                         (change)="cargarTaxonomia($event.target.value)" class="form-control">
+                        <option value="Vertebrado" >Vertebrado</option>
+                        <option value="Invertebrado">Invertebrado</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label for="lblCaracteristica">Taxonomia</label><br/>
+                    <select name="mTaxonomy" [(ngModel)]="seleccionadoTaxonomia" class="form-control" >
+                        <option [value]="item.option" *ngFor="let item of taxonomiaOptions">{{item.value}}</option>   
+                    </select>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-sm">
+                    <label for="txtNombreAnimal">Nombre del animal</label>
+                    <input type="text" class="form-control" id="txtCaracteristica" 
+                           name="txtNombreAnimal" placeholder="Agregar Nombre" ngModel>
+                </div>
+                <div class="col-sm">
+                    <label for="lblExtremidades">Cantidad de extremidades</label>
+                    <input type="text" class="form-control" id="txtExtremidades" name="txtExtremidades" 
+                            aria-describedby="helpExtremidades" placeholder="Cantidad de extremidades" ngModel>
+                    <small id="helpExtremidades" class="form-text text-muted">Este campo debe ser solo números</small>
+        
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-sm">
+                    <label for="lblSonido">Sonido del animal</label>
+                    <input type="text" class="form-control" id="txtSonido"  name="txtSonido" placeholder="Sonido que emite el animal" ngModel>
+                </div>
+                <div class="col-sm">
+                    <label for="lblAlimentacion">Alimentacion</label>
+                    <input type="text" class="form-control" id="txtAlimentacion" 
+                           name="txtAlimentacion" placeholder="Tipo de alimentacion" ngModel>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-sm">
+                    <label for="lblMovimiento">Donde se moviliza</label>
+                    <input type="text" class="form-control" id="txtMovimiento"
+                           name="txtMovimiento" placeholder="Tierra, agua, cielo" ngModel>
+                </div>
+            </div>
+
+            <br/>
+            <div class="row">
+                <div class="col-sm">
+                    <button class="btn btn-success" type="submit">Guardar</button>
+                </div>
+                <div class="col-sm">
+                    <button class="btn btn-warning" [routerLink]="['/']" type="button">Cancelar</button>
+                </div>
+            </div>
+        </div>
+        <br/><br/>
+    </form>
+</section>
+

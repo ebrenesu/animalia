@@ -13,7 +13,8 @@ export class Mamifero extends Vertebrado {
      * Descripcion: Crea un objeto de tipo vertebrado con los valores que vienen por parametro
      * Return:      N/A
      ************************************************************************************/
-    constructor(pNombre: String, pSonido: String, pTipo_esqueleto: String, pCantidad_extremidades: Number, pAlimentacion: String, pMovimiento: String) {
+    constructor(pNombre: String, pSonido: String, pTipo_esqueleto: String, pCantidad_extremidades: Number,
+                pAlimentacion: String, pMovimiento: String) {
         super(pNombre, pSonido, pTipo_esqueleto, pCantidad_extremidades);
         this.TipoAlimentacion = pAlimentacion;
         this.TipoMovimiento = pMovimiento;

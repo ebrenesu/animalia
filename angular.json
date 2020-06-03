@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Animalia"
+    }
+  },
+  "defaultProject": "Animalia",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
